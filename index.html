@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Kanban Board</h1>
+    <button id="toggle-theme">Toggle Theme</button>
+  </header>
+  <main id="board" role="list">
+    <section class="column" role="region" aria-labelledby="todo">
+      <h2 id="todo">To Do</h2>
+      <div class="card-container" role="list" data-column="todo"></div>
+      <button class="add-card">Add Card</button>
+    </section>
+    <section class="column" role="region" aria-labelledby="in-progress">
+      <h2 id="in-progress">In Progress</h2>
+      <div class="card-container" role="list" data-column="in-progress"></div>
+      <button class="add-card">Add Card</button>
+    </section>
+    <section class="column" role="region" aria-labelledby="done">
+      <h2 id="done">Done</h2>
+      <div class="card-container" role="list" data-column="done"></div>
+      <button class="add-card">Add Card</button>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <h3 id="modal-title">Edit Card</h3>
+      <input type="text" id="modal-title-input" placeholder="Card Title" />
+      <textarea id="modal-description-input" contenteditable="true"></textarea>
+      <button id="save-card">Save</button>
+      <button id="close-modal">Cancel</button>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
